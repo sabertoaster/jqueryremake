@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Chia Layout</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row row-1">
+            <div class="color_checker"></div>
+            <div></div>
+            <div class="color_checker"></div>
+            <div></div>
+            <div class="color_checker"></div>
+            <div></div>
+            <div class="color_checker"></div>
+            <div></div>
+            <div class="color_checker"></div>
+        </div>
+        <div class="row row-2">
+            <div>
+                <p>Xin chào học viên</p>
+                <p>Xin chào cựu học viên</p>
+            </div>
+            <div>
+                <p>Xin chào ba mẹ học viên</p>
+                <p>Xin chào chú bác học viên</p>
+            </div>
+            <div>
+                <p>Xin chào anh chị học viên</p>
+                <p>Xin chào cô dì học viên</p>
+            </div>
+        </div>
+        <div class="row row-3">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div id="combo__box-color_display"></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="row row-4">
+            <span id="textDisplay">Chúc mừng anh chị đã nhập học</span>
+        </div>
+        <div class="row row-5">
+            <div>
+                <div id="gender_radio">
+                    <div><input type="radio" onchange="alertGender(this)" class="gender_radio-male" name="gender"> <label for="gender_radio-male" class="gender_radio-male">Trai</label></div>
+                    <div><input type="radio" onchange="alertGender(this)" class="gender_radio-female" name="gender"> <label for="gender_radio-female" class="gender_radio-female">Gái</label></div>
+                    <div><input type="radio" onchange="alertGender(this)" class="gender_radio-gender_else" name="gender"> <label for="gender_radio-gender_else" class="gender_radio-gender_else">Khác</label></div>
+                </div>
+                <div></div>
+            </div>
+            <div>
+                <div id="data_list">
+                    <input list="browsers" name="browser" id="browser">
+                    <datalist id="browsers">
+                        <option value="Internet Explorer">
+                        <option value="Firefox">
+                        <option value="Chrome">
+                        <option value="Opera">
+                        <option value="Safari">
+                    </datalist>
+                    <button type="submit" onclick="detectBrowser()">Submit</button>
+                </div>
+            </div>
+            <div>
+                <div>
+                    <input id="text_concatenation-1" type="text" value="example123">
+                    <input id="text_concatenation-2" type="text" value="123example">
+                </div>
+                <div>
+                    <button id="text_concatenation" type="button" onclick="textConcatenation__isValidColor()">Click me!</button>
+                </div>
+            </div>
+            <div>
+                <div id="textarea__container">
+                    <textarea id="textarea">Add textbox</textarea>
+                    <button onclick="addTextBox()" id="image_display-button" type="submit" style='width:25%'>Submit</button>
+                    <input id="image_display-input" type="file">
+                </div>
+            </div>
+            <div>
+                <div>
+                    <div id="combo__box-container">
+                        <input onchange="combobox__notify()" list="combo-box" name="combo" id="combo__box-input">
+                        <datalist id="combo-box">
+                            <option value="----">
+                            <option value="One">
+                            <option value="Two">
+                            <option value="Three">
+                        </datalist>
+                        <button onclick="combobox__colorChanger()" type="submit" style="width:50%">Submit</button>
+                    </div>
+                </div>
+                <div></div>
+            </div>
+        </div>
+        <div class="row row-6">
+            <div>
+                <p>Thông báo ở đây!</p>
+                <div id="text_concatenation-display"></div>
+            </div>
+            <div>
+                <div></div>
+            </div>
+            <div>
+                <div></div>
+            </div>
+            <div id="checkbox__container">
+                    <form id="checkbox__form">
+                        <div id="checkbox__active-box">
+                            <div>
+                                <input type="checkbox" class="language1" name="language1" value="english">
+                                <label for="language1" class="language1">English</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" class="language2" name="language2" value="japanese">
+                                <label for="language2" class="language2">Japanese</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" class="language3" name="language3" value="chinese">
+                                <label for="language3" class="language3">Chinese</label>
+                            </div>
+                        </div>
+                        <div id="checkbox__buttons">
+                            <button id="checkbox__go1">Go1</button>
+                            <button type="button" checkbox__go2" onclick="replaceText()">Go2</button>
+                            <button type="reset">Reset</button>
+                        </div>
+                    </form>
+            </div>
+        </div>
+    </div>
+    <script src="event1.js"></script>
+</body>
+</html>
