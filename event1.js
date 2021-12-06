@@ -107,15 +107,15 @@ function detectBrowser() {
 
 //event10
 var origin = document.querySelector(".color_checker").outerHTML;
+var addText = `<textarea style="width:90%"></textarea>`;
 function addTextBox() {
-    if (document.querySelector("#textarea").value == "Add textbox") {
+    if (document.querySelector("#textarea").value == "Add textbox" && document.querySelector(".color_checker").outerHTML != addText) {
         var prototypeTextBox = document.querySelector(".color_checker").outerHTML;
         var position = prototypeTextBox.indexOf(">")+1;
-        var output = [prototypeTextBox.slice(0, position), `<textarea style="width:90%"></textarea>`, prototypeTextBox.slice(position)].join('');
+        var output = [prototypeTextBox.slice(0, position), addText, prototypeTextBox.slice(position)].join('');
         for (let i = 0; i < document.querySelectorAll(".color_checker").length; i++) {
             document.querySelectorAll(".color_checker")[i].outerHTML = output;
         } 
-        
     } else if (document.querySelector("#textarea").value == "Remove textbox") {
         for (let i = 0; i < document.querySelectorAll(".color_checker").length; i++) {
             document.querySelectorAll(".color_checker")[i].outerHTML = origin;
