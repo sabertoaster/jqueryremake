@@ -113,6 +113,7 @@ function addTextBox() {
         var prototypeTextBox = document.querySelector(".color_checker").outerHTML;
         var position = prototypeTextBox.indexOf(">")+1;
         var output = [prototypeTextBox.slice(0, position), addText, prototypeTextBox.slice(position)].join('');
+        addText = output;
         for (let i = 0; i < document.querySelectorAll(".color_checker").length; i++) {
             document.querySelectorAll(".color_checker")[i].outerHTML = output;
         } 
@@ -120,5 +121,6 @@ function addTextBox() {
         for (let i = 0; i < document.querySelectorAll(".color_checker").length; i++) {
             document.querySelectorAll(".color_checker")[i].outerHTML = origin;
         } 
+        addText = `<textarea style="width:90%"></textarea>`;
     }
 }
