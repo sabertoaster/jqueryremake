@@ -37,15 +37,14 @@ function replaceText() {
 //event5 *done*
 //event6
 function combobox__colorChanger() {
-    var colorDisplay = document.querySelector("#combo__box-color_display");
-    if (document.querySelector("#combo__box-input").value == "One") {
-        colorDisplay.style.backgroundColor = "black";
-
+    var colorDisplay = $("#combo__box-color_display");
+    var comboBoxInput = $("#combo__box-input");
+    if (comboBoxInput.val() == "One") {
+        colorDisplay.css("background-color", "black");
     }
-    if (document.querySelector("#combo__box-input").value == "----") {
-        colorDisplay.style.backgroundColor = "#FFD966";
+    if (comboBoxInput.val() == "----") {
+        colorDisplay.css("background-color", "#FFD966")
     }
-
 }
 //event7
 function combobox__notify() {
@@ -53,8 +52,8 @@ function combobox__notify() {
 }
 //event8
 function isValidColor() {
-    var text1 = document.querySelector("#text_concatenation-1").value;
-    var text2 = document.querySelector("#text_concatenation-2").value;
+    var text1 = $("#text_concatenation-1").val();
+    var text2 = $("#text_concatenation-2").val();
     var s = new Option().style;
     // return 'false' if color wasn't assigned
     s.color = text1;
@@ -64,15 +63,11 @@ function isValidColor() {
     var colorChecker2 = s.color == text2.toLowerCase();
     console.log(colorChecker1, colorChecker2);
     if (!colorChecker1 && colorChecker2) {
-        var myArr = document.querySelectorAll(".color_checker");
-        for (let i = 0; i < myArr.length; i++) {
-            myArr[i].style.backgroundColor = text2;
-        }
+        var myArr = $(".color_checker");
+        myArr.css("background-color", text2);
     } else if (colorChecker1 && !colorChecker2) {
-        var myArr = document.querySelectorAll(".color_checker");
-        for (let i = 0; i < myArr.length; i++) {
-            myArr[i].style.backgroundColor = text1;
-        }
+        var myArr = $(".color_checker");
+        myArr.css("background-color", text1);
     }
 }
 
@@ -100,27 +95,24 @@ function detectBrowser() {
     } else {
         result = 'Unknown';
     }
-    if (result == document.querySelector("#browser").value) {
+    if (result == $("#browser").val()) {
         alert(`Đúng trình duyệt ${hour}:${minutes}:${seconds}`)
     } else alert(`Sai trình duyệt ${day}/${month}/${year}`)
 }
 
 //event10
-var origin = document.querySelector(".color_checker").outerHTML;
+var origin = $(".color_checker").html();
 var addText = `<textarea style="width:90%"></textarea>`;
+
 function addTextBox() {
-    if (document.querySelector("#textarea").value == "Add textbox" && document.querySelector(".color_checker").outerHTML != addText) {
-        var prototypeTextBox = document.querySelector(".color_checker").outerHTML;
-        var position = prototypeTextBox.indexOf(">")+1;
+    if ($("#textarea").val() == "Add textbox" && $(".color_checker").html() != addText) {
+        var prototypeTextBox = $(".color_checker").html();
+        var position = prototypeTextBox.indexOf(">") + 1;
         var output = [prototypeTextBox.slice(0, position), addText, prototypeTextBox.slice(position)].join('');
         addText = output;
-        for (let i = 0; i < document.querySelectorAll(".color_checker").length; i++) {
-            document.querySelectorAll(".color_checker")[i].outerHTML = output;
-        } 
-    } else if (document.querySelector("#textarea").value == "Remove textbox") {
-        for (let i = 0; i < document.querySelectorAll(".color_checker").length; i++) {
-            document.querySelectorAll(".color_checker")[i].outerHTML = origin;
-        } 
+        $(".color_checker").html(output);
+    } else if ($("#textarea").val() == "Remove textbox") {
+        $(".color_checker").html("");
         addText = `<textarea style="width:90%"></textarea>`;
     }
 }
