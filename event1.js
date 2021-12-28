@@ -1,8 +1,8 @@
 //event1
 function alertGender(object) {
     let label_name = "label." + object.classList[0];
-    var label = document.querySelector(label_name);
-    alert(`Bạn đã chọn giá trị: ${label.innerHTML}`);
+    var label = $(label_name).html();
+    alert(`Bạn đã chọn giá trị: ${label}`);
 }
 //event2
 function uploadImage() {
@@ -13,10 +13,10 @@ function uploadImage() {
 }
 //event3
 function textConcatenation() {
-    var text1 = document.querySelector("#text_concatenation-1").value;
-    var text2 = document.querySelector("#text_concatenation-2").value;
-    var text = document.querySelector("#text_concatenation-display");
-    text.innerHTML = text1 + " " + text2;
+    var text1 = $("#text_concatenation-1").val();
+    var text2 = $("#text_concatenation-2").val();
+    var text = $("#text_concatenation-display");
+    text.html(text1 + " " + text2);
 }
 //event4
 function replaceText() {
